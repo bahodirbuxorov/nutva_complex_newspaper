@@ -318,16 +318,17 @@ main, header, footer, section { position: relative; z-index: 2; }
   border: 1px solid var(--ink);
   padding: 8px;
   background: var(--paper-dark);
-  height: 100%;
   display: flex;
   flex-direction: column;
+  align-self: start;
 }
 
 .fear-image {
   width: 100%;
-  flex: 1;
-  min-height: 280px;
+  height: 420px;
+  display: block;
   object-fit: cover;
+  background: #d8d0c0;
   filter: sepia(0.55) grayscale(0.4) contrast(1.05);
 }
 
@@ -1031,28 +1032,77 @@ main, header, footer, section { position: relative; z-index: 2; }
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE — mobile first cleanup
 ============================================ */
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
-  .hero-image { height: 320px; }
-  .hero-body { column-count: 1; }
-  .fear-grid { grid-template-columns: 1fr; gap: 24px; }
-  .fact-cards { grid-template-columns: 1fr; }
-  .video-grid { grid-template-columns: 1fr; }
-  .radio-list { grid-template-columns: 1fr; }
+img { max-width: 100%; height: auto; }
+
+/* Tablet ≤ 1024px */
+@media (max-width: 1024px) {
+  .paper { padding: 0 24px 70px; }
+  .hero-image { height: 380px; }
+  .fear-image { height: 380px; }
+  .fact-cards { gap: 18px; }
+  .video-grid { gap: 22px; }
 }
 
-@media (max-width: 600px) {
-  .paper { padding: 0 18px 60px; }
-  body { font-size: 17px; }
-  .masthead-top { flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: 12px; }
-  .stamp { width: 100px; height: 100px; font-size: 16px; top: -22px; right: -10px; }
-  .product-box { padding: 36px 22px 32px; }
-  .form-box { padding: 30px 22px; }
-  .coupon { padding: 30px 20px 26px; }
-  .coupon-scissors { font-size: 12px; }
-  .ornament-row { letter-spacing: 16px; padding-left: 16px; }
+/* Small tablet / large phone ≤ 900px */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 0; }
+  .hero-image, .fear-image { height: clamp(260px, 50vw, 360px); }
+  .hero-body { column-count: 1; text-align: left; hyphens: manual; }
+  .hero-body p:first-of-type::first-letter { font-size: 52px; }
+  .fear-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 0; }
+  .fact-cards { grid-template-columns: 1fr; gap: 16px; }
+  .video-grid { grid-template-columns: 1fr; gap: 22px; }
+  .radio-list { grid-template-columns: 1fr; }
+  .product-checklist { padding: 14px 16px; }
+}
+
+/* Phone ≤ 640px */
+@media (max-width: 640px) {
+  .paper { padding: 0 16px 70px; }
+  body { font-size: 17px; line-height: 1.6; }
+  .masthead { padding-top: 18px; }
+  .masthead-top { flex-direction: column; align-items: center; gap: 2px; text-align: center; font-size: 12px; }
+  .masthead-tagline { font-size: 13px; letter-spacing: 0.08em; }
+  .ornament-row { letter-spacing: 14px; padding-left: 14px; font-size: 16px; }
+  .section-headline { margin: 14px auto 6px; }
+  .hero-grid, .fear-grid { padding: 16px 0; gap: 20px; }
+  .fear-inset { padding: 22px 18px 18px; }
+  .fear-inset h3 { font-size: 22px; }
+  .fear-list li { font-size: 17px; }
+  .pull-quote { padding: 18px 14px; margin-top: 24px; }
+  .fact-card { padding: 20px 18px 22px; }
+  .fact-card-title { font-size: 26px; }
+  .product-box { padding: 34px 20px 30px; }
+  .product-checklist li { font-size: 18px; gap: 10px; }
+  .stamp { width: 96px; height: 96px; font-size: 15px; top: -22px; right: -8px; border-width: 3px; }
+  .video-card { padding: 10px; }
+  .coupon { padding: 28px 18px 24px; }
+  .coupon-scissors { font-size: 11px; letter-spacing: 0.2em; }
+  .coupon-timer { padding: 6px 12px; }
+  .form-box { padding: 28px 18px; }
+  .form-headline { font-size: 22px !important; }
+  .input-base,
+  .form-field input[type="text"],
+  .form-field input[type="tel"],
+  .form-field select { padding: 13px 12px; font-size: 17px; }
+  .phone-wrap { grid-template-columns: 80px 1fr; }
+  .phone-prefix { font-size: 17px; }
+  .btn-primary { font-size: 18px; padding: 16px 26px; }
+  .submit-btn { font-size: 19px; padding: 16px 18px; }
+}
+
+/* Very small phones ≤ 380px */
+@media (max-width: 380px) {
+  .paper { padding: 0 12px 70px; }
+  .masthead-title { font-size: 38px; }
+  .headline { font-size: 30px; }
+  .product-name { font-size: 40px; }
+  .stamp { width: 84px; height: 84px; font-size: 13px; }
+  .coupon-timer { font-size: 36px; }
+  .coupon-stamp { font-size: 20px; padding: 12px 18px; }
+  .mobile-cta { font-size: 14px; padding: 12px 12px; }
 }
 
 @media print {
@@ -1096,8 +1146,10 @@ main, header, footer, section { position: relative; z-index: 2; }
       <div class="hero-grid">
         <figure class="hero-image-wrap">
           <img class="hero-image"
-               src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=900&q=80"
-               alt="Bo'g'im og'rig'idan azob chekayotgan keksa inson">
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Elderly_Klimt%C3%B3.jpg/800px-Elderly_Klimt%C3%B3.jpg"
+               onerror="this.onerror=null;this.src=fallbackImg('pain');"
+               alt="Bo'g'im og'rig'idan azob chekayotgan keksa inson"
+               loading="lazy">
           <figcaption class="hero-caption">Surat: zinadan chiqishda og'riqdan azoblanayotgan bemor</figcaption>
         </figure>
 
@@ -1134,8 +1186,10 @@ main, header, footer, section { position: relative; z-index: 2; }
 
         <figure class="fear-image-wrap">
           <img class="fear-image"
-               src="https://images.unsplash.com/photo-1559750255-3c8a91761efe?auto=format&fit=crop&w=900&q=80"
-               alt="Erkin va qulay harakat qilayotgan keksa inson — umid ramzi">
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Walking_in_park_%2814%29.jpg/800px-Walking_in_park_%2814%29.jpg"
+               onerror="this.onerror=null;this.src=fallbackImg('hope');"
+               alt="Erkin va qulay harakat qilayotgan keksa inson — umid ramzi"
+               loading="lazy">
           <figcaption class="hero-caption">Surat: erkin harakat — insonning eng katta boyligi</figcaption>
         </figure>
       </div>
@@ -1419,6 +1473,19 @@ main, header, footer, section { position: relative; z-index: 2; }
 </a>
 
 <script>
+/* Inline SVG fallback so an image is always rendered, even offline */
+window.fallbackImg = function (kind) {
+  var label = kind === 'hope' ? "Erkin harakat" : "Bo'g'im og'rig'i";
+  var svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'>" +
+      "<rect width='800' height='600' fill='%23ECE5D8'/>" +
+      "<rect x='20' y='20' width='760' height='560' fill='none' stroke='%231A1A1A' stroke-width='2'/>" +
+      "<text x='400' y='300' text-anchor='middle' font-family='Playfair Display, serif' font-style='italic' font-size='44' fill='%231A1A1A'>" + label + "</text>" +
+      "<text x='400' y='350' text-anchor='middle' font-family='PT Serif, serif' font-style='italic' font-size='20' fill='%231A1A1A'>NUTVA COMPLEX</text>" +
+    "</svg>";
+  return "data:image/svg+xml;utf8," + svg;
+};
+
 (function () {
   'use strict';
 
