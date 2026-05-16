@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="uz-Cyrl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NUTVA COMPLEX — Bo'g'im og'rig'idan xalos bo'ling | Salomat Hayot Gazetasi</title>
-<meta name="description" content="Tabiiy tarkibli mahsulot bilan bo'g'im va mushaklar uchun kompleks yordam. Bosvelliya, juka, glyukozamin asosida.">
+<title>NUTVA COMPLEX — Бўғим оғриғидан халос бўлинг | Саломат Ҳаёт Газетаси</title>
+<meta name="description" content="Табиий таркибли маҳсулот билан бўғим ва мушаклар учун комплекс ёрдам. Босвеллия, жука, глюкозамин асосида.">
 
-<meta property="og:title" content="Bo'g'im og'rig'idan xalos bo'ling — NUTVA COMPLEX">
-<meta property="og:description" content="Tabiiy tarkibli mahsulot bilan bo'g'im va mushaklar uchun kompleks yordam">
+<meta property="og:title" content="Бўғим оғриғидан халос бўлинг — NUTVA COMPLEX">
+<meta property="og:description" content="Табиий таркибли маҳсулот билан бўғим ва мушаклар учун комплекс ёрдам">
 <meta property="og:image" content="og-image.jpg">
 <meta property="og:type" content="website">
 
@@ -46,7 +46,6 @@ body {
   position: relative;
 }
 
-/* Subtle paper grain overlay */
 body::before {
   content: "";
   position: fixed;
@@ -60,6 +59,8 @@ body::before {
 
 main, header, footer, section { position: relative; z-index: 2; }
 
+img { max-width: 100%; height: auto; }
+
 /* ============================================
    LAYOUT WRAPPER
 ============================================ */
@@ -71,7 +72,7 @@ main, header, footer, section { position: relative; z-index: 2; }
 }
 
 /* ============================================
-   HORIZONTAL RULES
+   HORIZONTAL RULES & ORNAMENTS
 ============================================ */
 .rule { border: 0; border-top: 1px solid var(--ink); margin: 14px 0; }
 .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 12px 0; }
@@ -95,9 +96,7 @@ main, header, footer, section { position: relative; z-index: 2; }
 /* ============================================
    MASTHEAD
 ============================================ */
-.masthead {
-  padding-top: 28px;
-}
+.masthead { padding-top: 28px; }
 
 .masthead-top {
   display: flex;
@@ -183,6 +182,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   border: 1px solid var(--ink);
   padding: 8px;
   background: var(--paper-dark);
+  align-self: start;
 }
 
 .hero-image {
@@ -190,6 +190,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   height: 420px;
   display: block;
   object-fit: cover;
+  background: #d8d0c0;
   filter: sepia(0.55) grayscale(0.4) contrast(1.05);
 }
 
@@ -276,11 +277,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   padding-bottom: 10px;
 }
 
-.fear-list {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 4px;
-}
+.fear-list { list-style: none; padding: 0; margin: 12px 0 4px; }
 
 .fear-list li {
   font-size: 18px;
@@ -318,8 +315,6 @@ main, header, footer, section { position: relative; z-index: 2; }
   border: 1px solid var(--ink);
   padding: 8px;
   background: var(--paper-dark);
-  display: flex;
-  flex-direction: column;
   align-self: start;
 }
 
@@ -415,9 +410,8 @@ main, header, footer, section { position: relative; z-index: 2; }
   border: 5px double var(--ink);
   background: var(--paper-dark);
   padding: 42px 32px 40px;
-  text-align: center;
   position: relative;
-  max-width: 880px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -428,6 +422,50 @@ main, header, footer, section { position: relative; z-index: 2; }
   border: 1px solid var(--ink);
   pointer-events: none;
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+}
+
+.product-image-wrap {
+  border: 1px solid var(--ink);
+  padding: 14px;
+  background: var(--paper);
+  text-align: center;
+  position: relative;
+}
+
+.product-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-image-caption {
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,0.4);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-info { text-align: center; }
 
 .product-eyebrow {
   font-family: 'PT Serif', serif;
@@ -441,7 +479,7 @@ main, header, footer, section { position: relative; z-index: 2; }
 .product-name {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: clamp(44px, 7vw, 72px);
+  font-size: clamp(40px, 6vw, 64px);
   letter-spacing: 0.04em;
   line-height: 1;
   margin: 8px 0 6px;
@@ -456,15 +494,14 @@ main, header, footer, section { position: relative; z-index: 2; }
 .product-checklist {
   list-style: none;
   text-align: left;
-  max-width: 540px;
-  margin: 24px auto 28px;
-  padding: 18px 22px;
+  margin: 18px auto 22px;
+  padding: 16px 18px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
 }
 
 .product-checklist li {
-  font-size: 19px;
+  font-size: 18px;
   padding: 8px 0;
   display: flex;
   align-items: baseline;
@@ -476,15 +513,15 @@ main, header, footer, section { position: relative; z-index: 2; }
   content: "✔";
   color: var(--accent);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 19px;
   flex: 0 0 auto;
 }
 
 .product-closer {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 22px;
-  margin-top: 18px;
+  font-size: 20px;
+  margin-top: 14px;
   line-height: 1.4;
 }
 
@@ -558,17 +595,9 @@ main, header, footer, section { position: relative; z-index: 2; }
   border-top: 1px solid var(--ink);
 }
 
-.video-ornament {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
+.video-ornament { display: block; font-size: 16px; margin-bottom: 4px; }
 
-.video-caption p {
-  font-style: italic;
-  font-size: 16px;
-  line-height: 1.4;
-}
+.video-caption p { font-style: italic; font-size: 16px; line-height: 1.4; }
 
 .rating-box {
   margin: 36px auto 0;
@@ -649,11 +678,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   text-transform: uppercase;
 }
 
-.coupon-timer-label {
-  font-style: italic;
-  font-size: 16px;
-  margin-bottom: 8px;
-}
+.coupon-timer-label { font-style: italic; font-size: 16px; margin-bottom: 8px; }
 
 .coupon-timer {
   font-family: 'Playfair Display', serif;
@@ -719,7 +744,7 @@ main, header, footer, section { position: relative; z-index: 2; }
 .form-headline {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: clamp(26px, 4vw, 38px);
+  font-size: clamp(22px, 3vw, 28px);
   text-align: center;
   margin: 6px 0 6px;
   letter-spacing: 0.02em;
@@ -734,11 +759,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   position: relative;
 }
 
-.form-fields {
-  display: grid;
-  gap: 18px;
-  position: relative;
-}
+.form-fields { display: grid; gap: 18px; position: relative; }
 
 .form-field { display: block; }
 
@@ -773,10 +794,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   outline-offset: 1px;
 }
 
-.phone-wrap {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-}
+.phone-wrap { display: grid; grid-template-columns: 90px 1fr; }
 
 .phone-prefix {
   background: var(--ink);
@@ -794,9 +812,7 @@ main, header, footer, section { position: relative; z-index: 2; }
 
 .phone-wrap input { border-left: 0; }
 
-.select-wrap {
-  position: relative;
-}
+.select-wrap { position: relative; }
 
 .select-wrap::after {
   content: "▾";
@@ -809,10 +825,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   color: var(--ink);
 }
 
-.form-field select {
-  padding-right: 38px;
-  cursor: pointer;
-}
+.form-field select { padding-right: 38px; cursor: pointer; }
 
 .radio-list {
   display: grid;
@@ -855,10 +868,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   border-radius: 50%;
 }
 
-.radio-item input[type="radio"]:focus {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
-}
+.radio-item input[type="radio"]:focus { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 .submit-btn {
   width: 100%;
@@ -878,25 +888,15 @@ main, header, footer, section { position: relative; z-index: 2; }
 }
 
 .submit-btn:hover:not(:disabled),
-.submit-btn:focus:not(:disabled) {
-  background: var(--accent);
-}
+.submit-btn:focus:not(:disabled) { background: var(--accent); }
 
 .submit-btn:disabled { opacity: 0.7; cursor: wait; }
 
-.form-trust {
-  margin-top: 18px;
-  text-align: center;
-  position: relative;
-}
+.form-trust { margin-top: 18px; text-align: center; position: relative; }
 
-.form-trust p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 1.5;
-}
+.form-trust p { font-style: italic; font-size: 14px; line-height: 1.5; }
 
-.form-trust p:first-child::before {
+.form-trust p:first-of-type::before {
   content: "✔ ";
   color: var(--accent);
   font-weight: 700;
@@ -954,11 +954,7 @@ main, header, footer, section { position: relative; z-index: 2; }
   line-height: 1.2;
   margin-bottom: 12px;
 }
-.success-body {
-  font-style: italic;
-  font-size: 18px;
-  line-height: 1.5;
-}
+.success-body { font-style: italic; font-size: 18px; line-height: 1.5; }
 
 /* ============================================
    FOOTER
@@ -984,17 +980,13 @@ main, header, footer, section { position: relative; z-index: 2; }
 /* ============================================
    STICKY MOBILE CTA
 ============================================ */
-.mobile-cta {
-  display: none;
-}
+.mobile-cta { display: none; }
 
 @media (max-width: 768px) {
   .mobile-cta {
     display: flex;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     background: var(--ink);
     color: var(--paper);
     z-index: 100;
@@ -1017,35 +1009,24 @@ main, header, footer, section { position: relative; z-index: 2; }
 /* ============================================
    FADE-IN ON SCROLL
 ============================================ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+
 @media (prefers-reduced-motion: reduce) {
   .fade-in { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
 
 /* ============================================
-   RESPONSIVE — mobile first cleanup
+   RESPONSIVE
 ============================================ */
-img { max-width: 100%; height: auto; }
-
-/* Tablet ≤ 1024px */
 @media (max-width: 1024px) {
   .paper { padding: 0 24px 70px; }
-  .hero-image { height: 380px; }
-  .fear-image { height: 380px; }
+  .hero-image, .fear-image { height: 380px; }
   .fact-cards { gap: 18px; }
   .video-grid { gap: 22px; }
 }
 
-/* Small tablet / large phone ≤ 900px */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 0; }
   .hero-image, .fear-image { height: clamp(260px, 50vw, 360px); }
@@ -1053,12 +1034,12 @@ img { max-width: 100%; height: auto; }
   .hero-body p:first-of-type::first-letter { font-size: 52px; }
   .fear-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 0; }
   .fact-cards { grid-template-columns: 1fr; gap: 16px; }
+  .product-grid { grid-template-columns: 1fr; gap: 24px; }
   .video-grid { grid-template-columns: 1fr; gap: 22px; }
   .radio-list { grid-template-columns: 1fr; }
   .product-checklist { padding: 14px 16px; }
 }
 
-/* Phone ≤ 640px */
 @media (max-width: 640px) {
   .paper { padding: 0 16px 70px; }
   body { font-size: 17px; line-height: 1.6; }
@@ -1075,14 +1056,13 @@ img { max-width: 100%; height: auto; }
   .fact-card { padding: 20px 18px 22px; }
   .fact-card-title { font-size: 26px; }
   .product-box { padding: 34px 20px 30px; }
-  .product-checklist li { font-size: 18px; gap: 10px; }
+  .product-checklist li { font-size: 17px; gap: 10px; }
   .stamp { width: 96px; height: 96px; font-size: 15px; top: -22px; right: -8px; border-width: 3px; }
   .video-card { padding: 10px; }
   .coupon { padding: 28px 18px 24px; }
   .coupon-scissors { font-size: 11px; letter-spacing: 0.2em; }
   .coupon-timer { padding: 6px 12px; }
   .form-box { padding: 28px 18px; }
-  .form-headline { font-size: 22px !important; }
   .input-base,
   .form-field input[type="text"],
   .form-field input[type="tel"],
@@ -1093,12 +1073,11 @@ img { max-width: 100%; height: auto; }
   .submit-btn { font-size: 19px; padding: 16px 18px; }
 }
 
-/* Very small phones ≤ 380px */
 @media (max-width: 380px) {
   .paper { padding: 0 12px 70px; }
   .masthead-title { font-size: 38px; }
   .headline { font-size: 30px; }
-  .product-name { font-size: 40px; }
+  .product-name { font-size: 38px; }
   .stamp { width: 84px; height: 84px; font-size: 13px; }
   .coupon-timer { font-size: 36px; }
   .coupon-stamp { font-size: 20px; padding: 12px 18px; }
@@ -1115,32 +1094,28 @@ img { max-width: 100%; height: auto; }
 
 <div class="paper">
 
-  <!-- ============================================
-       1. MASTHEAD
-  ============================================ -->
+  <!-- 1. MASTHEAD -->
   <header class="masthead" role="banner">
     <hr class="rule">
     <div class="masthead-top">
-      <span>№ 142 — Maxsus nashr</span>
-      <span>Toshkent</span>
-      <span id="masthead-date">2026 yil</span>
+      <span>№ 142 — Махсус нашр</span>
+      <span>Тошкент</span>
+      <span id="masthead-date">2026 йил</span>
     </div>
     <hr class="rule">
-    <h1 class="masthead-title">Salomat Hayot Gazetasi</h1>
+    <h1 class="masthead-title">Саломат Ҳаёт Газетаси</h1>
     <hr class="rule">
-    <div class="masthead-tagline">Sog'liq — eng katta boylik &nbsp;❧&nbsp; Mustaqil tibbiy axborot nashri</div>
+    <div class="masthead-tagline">Соғлиқ — энг катта бойлик &nbsp;❧&nbsp; Мустақил тиббий ахборот нашри</div>
     <hr class="rule-thick">
   </header>
 
   <main>
 
-    <!-- ============================================
-         2. MAIN HEADLINE (Muammo)
-    ============================================ -->
+    <!-- 2. MAIN HEADLINE -->
     <section class="headline-section fade-in" aria-labelledby="main-headline">
-      <div class="kicker">Bosh maqola &nbsp;❧&nbsp; Sog'liq xabarnomasi</div>
-      <h2 class="headline" id="main-headline">HARAKATLANGANDA CHIDAB BO'LMAS OG'RIQ BORMI?</h2>
-      <p class="subheadline">Bo'g'im kasalliklari asta-sekin insonni ilojsiz holatga olib keladi</p>
+      <div class="kicker">Бош мақола &nbsp;❧&nbsp; Соғлиқ хабарномаси</div>
+      <h2 class="headline" id="main-headline">ҲАРАКАТЛАНГАНДА ЧИДАБ БЎЛМАС ОҒРИҚ БОРМИ?</h2>
+      <p class="subheadline">Бўғим касалликлари аста-секин инсонни иложсиз ҳолатга олиб келади</p>
       <div class="ornament-row" aria-hidden="true">✦ ▪ ✦</div>
 
       <div class="hero-grid">
@@ -1148,39 +1123,37 @@ img { max-width: 100%; height: auto; }
           <img class="hero-image"
                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Elderly_Klimt%C3%B3.jpg/800px-Elderly_Klimt%C3%B3.jpg"
                onerror="this.onerror=null;this.src=fallbackImg('pain');"
-               alt="Bo'g'im og'rig'idan azob chekayotgan keksa inson"
+               alt="Бўғим оғриғидан азоб чекаётган кекса инсон"
                loading="lazy">
-          <figcaption class="hero-caption">Surat: zinadan chiqishda og'riqdan azoblanayotgan bemor</figcaption>
+          <figcaption class="hero-caption">Сурат: зинадан чиқишда оғриқдан азобланаётган бемор</figcaption>
         </figure>
 
         <div class="hero-body">
-          <p>Avval zinadan chiqish qiyinlashadi, keyin uzoq yurish, oxirida esa odam o'zi mustaqil harakatlana olmay qolishi mumkin. Bu jarayon ko'pchilik uchun sezilmas tarzda boshlanadi.</p>
-          <p>Oyoq, tizza va bo'g'imlardagi og'riqlar dastlab oddiy holatdek tuyulishi mumkin. Ammo vaqtida e'tibor berilmasa, bu muammo kundalik hayotdagi harakatni cheklab, jiddiy asoratlarga olib kelishi ehtimoli bor.</p>
-          <p>Shu sababli bo'g'imlarga o'z vaqtida e'tibor berish juda muhim — chunki harakat erkinligi insonning faol hayotidagi eng katta boyliklardan biridir.</p>
+          <p>Аввал зинадан чиқиш қийинлашади, кейин узоқ юриш, охирида эса одам ўзи мустақил ҳаракатлана олмай қолиши мумкин. Бу жараён кўпчилик учун сезилмас тарзда бошланади.</p>
+          <p>Оёқ, тизза ва бўғимлардаги оғриқлар дастлаб оддий ҳолатдек туюлиши мумкин. Аммо вақтида эътибор берилмаса, бу муаммо кундалик ҳаётдаги ҳаракатни чеклаб, жиддий асоратларга олиб келиши эҳтимоли бор.</p>
+          <p>Шу сабабли бўғимларга ўз вақтида эътибор бериш жуда муҳим — чунки ҳаракат эркинлиги инсоннинг фаол ҳаётидаги энг катта бойликлардан биридир.</p>
         </div>
       </div>
     </section>
 
-    <!-- ============================================
-         3. FEAR / URGENCY
-    ============================================ -->
+    <!-- 3. FEAR / URGENCY -->
     <section class="fear-section fade-in" aria-labelledby="fear-headline">
-      <div class="section-eyebrow">Diqqat &nbsp;❧&nbsp; Ogohlantirish</div>
-      <h2 class="section-headline" id="fear-headline">Vaqt — Bo'g'imlar Dushmani</h2>
+      <div class="section-eyebrow">Диққат &nbsp;❧&nbsp; Огоҳлантириш</div>
+      <h2 class="section-headline" id="fear-headline">Вақт — Бўғимлар Душмани</h2>
       <hr class="rule">
 
       <div class="fear-grid">
         <div class="fear-inset">
-          <h3>Vaqtida e'tibor berilmasa…</h3>
+          <h3>Вақтида эътибор берилмаса…</h3>
           <p style="font-style: italic; margin-bottom: 6px;">
-            Dastlab oddiy og'riq yoki yengil qotishish kabi ko'ringan holatlar vaqt o'tishi bilan quyidagi muammolarni keltirib chiqarishi mumkin:
+            Дастлаб оддий оғриқ ёки енгил қотишиш каби кўринган ҳолатлар вақт ўтиши билан қуйидаги муаммоларни келтириб чиқариши мумкин:
           </p>
           <ul class="fear-list">
-            <li>yurishda qiyinchilik</li>
-            <li>zinadan chiqishda og'riq</li>
-            <li>oyoq va tizzalarda shish</li>
-            <li>ertalabki qotishish</li>
-            <li>mushaklarda kuchli noqulaylik</li>
+            <li>юришда қийинчилик</li>
+            <li>зинадан чиқишда оғриқ</li>
+            <li>оёқ ва тиззаларда шиш</li>
+            <li>эрталабки қотишиш</li>
+            <li>мушакларда кучли ноқулайлик</li>
           </ul>
         </div>
 
@@ -1188,92 +1161,100 @@ img { max-width: 100%; height: auto; }
           <img class="fear-image"
                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Walking_in_park_%2814%29.jpg/800px-Walking_in_park_%2814%29.jpg"
                onerror="this.onerror=null;this.src=fallbackImg('hope');"
-               alt="Erkin va qulay harakat qilayotgan keksa inson — umid ramzi"
+               alt="Эркин ва қулай ҳаракат қилаётган кекса инсон — умид рамзи"
                loading="lazy">
-          <figcaption class="hero-caption">Surat: erkin harakat — insonning eng katta boyligi</figcaption>
+          <figcaption class="hero-caption">Сурат: эркин ҳаракат — инсоннинг энг катта бойлиги</figcaption>
         </figure>
       </div>
 
       <blockquote class="pull-quote">
-        Dastlab oddiy og'riq… keyinchalik operatsiya.
-        Bo'g'im va suyaklarga erta bosqichdayoq g'amxo'rlik qilish — bu kelajakdagi sog'lig'ingiz uchun qilingan eng to'g'ri qaror.
+        Дастлаб оддий оғриқ… кейинчалик операция.
+        Бўғим ва суякларга эрта босқичдаёқ ғамхўрлик қилиш — бу келажакдаги соғлиғингиз учун қилинган энг тўғри қарор.
       </blockquote>
     </section>
 
-    <!-- ============================================
-         4. NATURAL SOLUTION
-    ============================================ -->
+    <!-- 4. NATURAL SOLUTION -->
     <section class="solution-section fade-in" aria-labelledby="solution-headline">
-      <div class="section-eyebrow">Tibbiyot &nbsp;❧&nbsp; Tabiat kuchi</div>
-      <h2 class="section-headline" id="solution-headline">Tabiat Bergan Yechim</h2>
+      <div class="section-eyebrow">Тиббиёт &nbsp;❧&nbsp; Табиат кучи</div>
+      <h2 class="section-headline" id="solution-headline">Табиат Берган Ечим</h2>
       <hr class="rule">
       <p class="solution-intro">
-        Tabiiy o'simliklar asosida yaratilgan mahsulotimiz bo'g'im va mushaklardagi
-        noqulayliklarga qarshi kompleks yordam beradi. Mana — uning uchta asosiy tarkibi:
+        Табиий ўсимликлар асосида яратилган маҳсулотимиз бўғим ва мушаклардаги
+        ноқулайликларга қарши комплекс ёрдам беради. Мана — унинг учта асосий таркиби:
       </p>
 
       <div class="fact-cards">
         <article class="fact-card">
-          <div class="fact-card-num">№ 1 &nbsp;·&nbsp; Tabiiy tarkib</div>
-          <h3 class="fact-card-title">BOSVELLIYA</h3>
+          <div class="fact-card-num">№ 1 &nbsp;·&nbsp; Табиий таркиб</div>
+          <h3 class="fact-card-title">БОСВЕЛЛИЯ</h3>
           <hr class="fact-card-rule">
           <p class="fact-card-body">
-            Bo'g'imlardagi noqulaylik va yallig'lanishni kamaytirishga yordam beradi,
-            tog'ay to'qimalarini qo'llab-quvvatlaydi.
+            Бўғимлардаги ноқулайлик ва яллиғланишни камайтиришга ёрдам беради,
+            тоғай тўқималарини қўллаб-қувватлайди.
           </p>
         </article>
 
         <article class="fact-card">
-          <div class="fact-card-num">№ 2 &nbsp;·&nbsp; Tabiiy tarkib</div>
-          <h3 class="fact-card-title">JUKA</h3>
+          <div class="fact-card-num">№ 2 &nbsp;·&nbsp; Табиий таркиб</div>
+          <h3 class="fact-card-title">ЖУКА</h3>
           <hr class="fact-card-rule">
           <p class="fact-card-body">
-            Spazm va shishlarning oldini olishga ko'maklashadi,
-            mushaklarni tinchlantiradi va dam olishga yordam beradi.
+            Спазм ва шишларнинг олдини олишга кўмаклашади,
+            мушакларни тинчлантиради ва дам олишга ёрдам беради.
           </p>
         </article>
 
         <article class="fact-card">
-          <div class="fact-card-num">№ 3 &nbsp;·&nbsp; Tabiiy tarkib</div>
-          <h3 class="fact-card-title">GLYUKOZAMIN</h3>
+          <div class="fact-card-num">№ 3 &nbsp;·&nbsp; Табиий таркиб</div>
+          <h3 class="fact-card-title">ГЛЮКОЗАМИН</h3>
           <hr class="fact-card-rule">
           <p class="fact-card-body">
-            Bo'g'im egiluvchanligini oshirish va to'qimalar regeneratsiyasini
-            qo'llab-quvvatlashga yordam beradi.
+            Бўғим эгилувчанлигини ошириш ва тўқималар регенерациясини
+            қўллаб-қувватлашга ёрдам беради.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- ============================================
-         5. PRODUCT SPOTLIGHT
-    ============================================ -->
+    <!-- 5. PRODUCT SPOTLIGHT -->
     <section class="product-section fade-in" aria-labelledby="product-name">
       <div class="ornament-row" aria-hidden="true">❧ ✦ ❧</div>
       <div class="product-box">
-        <div class="stamp" aria-label="Original mahsulot"><span>ORIGINAL</span></div>
-        <div class="product-eyebrow">Maxsus tavsiya etiladi</div>
-        <h2 class="product-name" id="product-name">NUTVA COMPLEX</h2>
-        <p class="product-tagline">Bo'g'im va mushaklar uchun tabiiy kompleks yordam</p>
+        <div class="stamp" aria-label="Оригинал маҳсулот"><span>ORIGINAL</span></div>
 
-        <ul class="product-checklist">
-          <li>Tabiiy tarkib — o'simliklar asosida</li>
-          <li>Kundalik harakatni qo'llab-quvvatlaydi</li>
-          <li>Bo'g'im va mushaklar uchun kompleks yordam</li>
-          <li>Faol hayot tarzini saqlashga yordam beradi</li>
-        </ul>
+        <div class="product-grid">
+          <figure class="product-image-wrap">
+            <img class="product-image"
+                 src="nutva-product.png"
+                 onerror="this.onerror=null;this.src=productFallback();"
+                 alt="NUTVA COMPLEX маҳсулоти — табиий таркибли бўғим капсулалари"
+                 loading="lazy">
+            <figcaption class="product-image-caption">60 капсула &nbsp;·&nbsp; Табиий таркиб</figcaption>
+          </figure>
 
-        <p class="product-closer">Sog'lom bo'g'imlar — erkin va qulay harakat demakdir.</p>
+          <div class="product-info">
+            <div class="product-eyebrow">Махсус тавсия этилади</div>
+            <h2 class="product-name" id="product-name">NUTVA COMPLEX</h2>
+            <p class="product-tagline">Бўғим ва мушаклар учун табиий комплекс ёрдам</p>
+
+            <ul class="product-checklist">
+              <li>Табиий таркиб — ўсимликлар асосида</li>
+              <li>Кундалик ҳаракатни қўллаб-қувватлайди</li>
+              <li>Бўғим ва мушаклар учун комплекс ёрдам</li>
+              <li>Фаол ҳаёт тарзини сақлашга ёрдам беради</li>
+            </ul>
+
+            <p class="product-closer">Соғлом бўғимлар — эркин ва қулай ҳаракат демакдир.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ============================================
-         6. VIDEO TESTIMONIALS
-    ============================================ -->
+    <!-- 6. VIDEO TESTIMONIALS -->
     <section class="video-section fade-in" aria-labelledby="video-headline">
-      <div class="section-eyebrow">Mijozlarimiz guvohliklaridan</div>
-      <h2 class="section-headline" id="video-headline">MIJOZLARIMIZNING SO'ZLARI</h2>
-      <p class="solution-intro" style="margin-bottom: 6px;">Haqiqiy insonlar — haqiqiy natijalar</p>
+      <div class="section-eyebrow">Мижозларимиз гувоҳликларидан</div>
+      <h2 class="section-headline" id="video-headline">МИЖОЗЛАРИМИЗНИНГ СЎЗЛАРИ</h2>
+      <p class="solution-intro" style="margin-bottom: 6px;">Ҳақиқий инсонлар — ҳақиқий натижалар</p>
       <hr class="rule">
 
       <div class="video-grid">
@@ -1281,14 +1262,14 @@ img { max-width: 100%; height: auto; }
           <div class="video-frame">
             <iframe
               src="https://www.youtube.com/embed/dxRkTXmZuZE?rel=0&modestbranding=1&playsinline=1"
-              title="Mijoz guvohligi — Mohira"
+              title="Мижоз гувоҳлиги — Моҳира"
               loading="lazy"
               allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
           <div class="video-caption">
             <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Toshkentlik Mohira, 58 yosh</p>
+            <p>Тошкентлик Моҳира, 58 ёш</p>
           </div>
         </article>
 
@@ -1296,14 +1277,14 @@ img { max-width: 100%; height: auto; }
           <div class="video-frame">
             <iframe
               src="https://www.youtube.com/embed/9WmRTf_oMoI?rel=0&modestbranding=1&playsinline=1"
-              title="Mijoz guvohligi — Karim"
+              title="Мижоз гувоҳлиги — Карим"
               loading="lazy"
               allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
           <div class="video-caption">
             <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Samarqandlik Karim aka, 62 yosh</p>
+            <p>Самарқандлик Карим ака, 62 ёш</p>
           </div>
         </article>
 
@@ -1311,14 +1292,14 @@ img { max-width: 100%; height: auto; }
           <div class="video-frame">
             <iframe
               src="https://www.youtube.com/embed/Uc6PwZlyt5o?rel=0&modestbranding=1&playsinline=1"
-              title="Mijoz guvohligi — Saodat"
+              title="Мижоз гувоҳлиги — Саодат"
               loading="lazy"
               allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
           <div class="video-caption">
             <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Farg'onalik Saodat opa, 55 yosh</p>
+            <p>Фарғоналик Саодат опа, 55 ёш</p>
           </div>
         </article>
 
@@ -1326,142 +1307,136 @@ img { max-width: 100%; height: auto; }
           <div class="video-frame">
             <iframe
               src="https://www.youtube.com/embed/3NszuJGqnxU?rel=0&modestbranding=1&playsinline=1"
-              title="Mijoz guvohligi — Rahim"
+              title="Мижоз гувоҳлиги — Раҳим"
               loading="lazy"
               allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
           <div class="video-caption">
             <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Buxorolik Rahim aka, 64 yosh</p>
+            <p>Бухоролик Раҳим ака, 64 ёш</p>
           </div>
         </article>
       </div>
 
-      <div class="rating-box" role="group" aria-label="Mijozlar bahosi">
+      <div class="rating-box" role="group" aria-label="Мижозлар баҳоси">
         <div class="rating-stars" aria-hidden="true">★★★★★</div>
-        <div class="rating-text">4.8 — 1200+ mijoz fikri</div>
+        <div class="rating-text">4.8 — 1200+ мижоз фикри</div>
       </div>
     </section>
 
-    <!-- ============================================
-         7. COUPON
-    ============================================ -->
+    <!-- 7. COUPON -->
     <section class="coupon-section fade-in" aria-labelledby="coupon-title">
       <div class="ornament-row" aria-hidden="true">✂ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</div>
       <div class="coupon">
         <div class="coupon-scissors" aria-hidden="true">✂ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</div>
-        <div class="coupon-eyebrow">Maxsus taklif &nbsp;❧&nbsp; Cheklangan vaqt</div>
-        <h2 class="coupon-title" id="coupon-title">CHEGIRMA OLISH KUPONI</h2>
+        <div class="coupon-eyebrow">Махсус таклиф &nbsp;❧&nbsp; Чекланган вақт</div>
+        <h2 class="coupon-title" id="coupon-title">ЧЕГИРМА ОЛИШ КУПОНИ</h2>
 
-        <div class="coupon-stamp" aria-label="O'ttiz foiz chegirma">30% CHEGIRMA</div>
+        <div class="coupon-stamp" aria-label="Ўттиз фоиз чегирма">30% ЧЕГИРМА</div>
 
-        <p class="coupon-timer-label">Ushbu taklif tugashiga qoldi:</p>
+        <p class="coupon-timer-label">Ушбу таклиф тугашига қолди:</p>
         <div class="coupon-timer" id="countdown" aria-live="polite" aria-atomic="true">
           <span id="cd-h">04</span><span class="sep">:</span><span id="cd-m">00</span><span class="sep">:</span><span id="cd-s">00</span>
         </div>
         <div>
-          <a href="#lead-form" class="btn-primary" data-scroll>Chegirmani olish →</a>
+          <a href="#lead-form" class="btn-primary" data-scroll>Чегирмани олиш →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================================
-         8. LEAD CAPTURE FORM
-    ============================================ -->
+    <!-- 8. LEAD CAPTURE FORM -->
     <section class="form-section fade-in" id="lead-form" aria-labelledby="form-headline">
-      <div class="section-eyebrow">Bepul maslahat olish</div>
+      <div class="section-eyebrow">Бепул маслаҳат олиш</div>
       <hr class="rule">
-      <h2 class="section-headline" id="form-headline">BUGUN ARIZA QOLDIRING</h2>
+      <h2 class="section-headline" id="form-headline">БУГУН АРИЗА ҚОЛДИРИНГ</h2>
       <hr class="rule">
 
       <div class="form-box" id="form-container">
-        <div class="form-headline" style="font-size: 24px;">Bo'g'im salomatligi uchun birinchi qadam</div>
-        <p class="form-sub">Quyidagi anketani to'ldiring — mutaxassisimiz sizga qisqa muddat ichida bog'lanadi.</p>
+        <div class="form-headline">Бўғим саломатлиги учун биринчи қадам</div>
+        <p class="form-sub">Қуйидаги анкетани тўлдиринг — мутахассисимиз сизга қисқа муддат ичида боғланади.</p>
 
         <form id="lead-form-el" class="form-fields" novalidate>
 
           <div class="form-field">
-            <label for="f-name">Ismingiz:</label>
-            <input type="text" id="f-name" name="name" placeholder="Ism va familiya" required autocomplete="name">
-            <div class="field-error" data-error="name">Iltimos, ismingizni kiriting.</div>
+            <label for="f-name">Исмингиз:</label>
+            <input type="text" id="f-name" name="name" placeholder="Исм ва фамилия" required autocomplete="name">
+            <div class="field-error" data-error="name">Илтимос, исмингизни киритинг.</div>
           </div>
 
           <div class="form-field">
-            <label for="f-phone">Telefon raqamingiz:</label>
+            <label for="f-phone">Телефон рақамингиз:</label>
             <div class="phone-wrap">
-              <div class="phone-prefix" aria-label="O'zbekiston kodi">+998</div>
+              <div class="phone-prefix" aria-label="Ўзбекистон коди">+998</div>
               <input type="tel" id="f-phone" name="phone" placeholder="XX XXX XX XX" inputmode="numeric" required autocomplete="tel-national">
             </div>
-            <div class="field-error" data-error="phone">Iltimos, to'g'ri telefon raqamingizni kiriting (9 ta raqam).</div>
+            <div class="field-error" data-error="phone">Илтимос, тўғри телефон рақамингизни киритинг (9 та рақам).</div>
           </div>
 
           <div class="form-field">
-            <label for="f-region">Viloyatingiz:</label>
+            <label for="f-region">Вилоятингиз:</label>
             <div class="select-wrap">
               <select id="f-region" name="region" required>
-                <option value="" disabled selected>Tanlang...</option>
-                <option disabled>──────── O'zbekiston viloyatlari ────────</option>
-                <option value="Toshkent shahri">Toshkent shahri</option>
-                <option value="Toshkent viloyati">Toshkent viloyati</option>
-                <option value="Andijon viloyati">Andijon viloyati</option>
-                <option value="Farg'ona viloyati">Farg'ona viloyati</option>
-                <option value="Namangan viloyati">Namangan viloyati</option>
-                <option value="Samarqand viloyati">Samarqand viloyati</option>
-                <option value="Buxoro viloyati">Buxoro viloyati</option>
-                <option value="Navoiy viloyati">Navoiy viloyati</option>
-                <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
-                <option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
-                <option value="Jizzax viloyati">Jizzax viloyati</option>
-                <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
-                <option value="Xorazm viloyati">Xorazm viloyati</option>
-                <option value="Qoraqalpog'iston Respublikasi">Qoraqalpog'iston Respublikasi</option>
-                <option disabled>──────── Xorij ────────</option>
-                <option value="Boshqa davlat">Boshqa davlat</option>
+                <option value="" disabled selected>Танланг...</option>
+                <option disabled>──────── Ўзбекистон вилоятлари ────────</option>
+                <option value="Тошкент шаҳри">Тошкент шаҳри</option>
+                <option value="Тошкент вилояти">Тошкент вилояти</option>
+                <option value="Андижон вилояти">Андижон вилояти</option>
+                <option value="Фарғона вилояти">Фарғона вилояти</option>
+                <option value="Наманган вилояти">Наманган вилояти</option>
+                <option value="Самарқанд вилояти">Самарқанд вилояти</option>
+                <option value="Бухоро вилояти">Бухоро вилояти</option>
+                <option value="Навоий вилояти">Навоий вилояти</option>
+                <option value="Қашқадарё вилояти">Қашқадарё вилояти</option>
+                <option value="Сурхондарё вилояти">Сурхондарё вилояти</option>
+                <option value="Жиззах вилояти">Жиззах вилояти</option>
+                <option value="Сирдарё вилояти">Сирдарё вилояти</option>
+                <option value="Хоразм вилояти">Хоразм вилояти</option>
+                <option value="Қорақалпоғистон Республикаси">Қорақалпоғистон Республикаси</option>
+                <option disabled>──────── Хориж ────────</option>
+                <option value="Бошқа давлат">Бошқа давлат</option>
               </select>
             </div>
-            <div class="field-error" data-error="region">Iltimos, viloyatingizni tanlang.</div>
+            <div class="field-error" data-error="region">Илтимос, вилоятингизни танланг.</div>
           </div>
 
           <div class="form-field">
-            <label as="legend">Qaysi muammo bo'yicha murojaat qilyapsiz?</label>
-            <div class="radio-list" role="radiogroup" aria-label="Kasallik turi">
-              <label class="radio-item"><input type="radio" name="disease" value="Tizza og'rig'i"> Tizza og'rig'i</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Bo'g'im og'rig'i"> Bo'g'im og'rig'i</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Bel og'rig'i"> Bel og'rig'i</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Oyoq og'rig'i"> Oyoq og'rig'i</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Artroz / Artrit"> Artroz / Artrit</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Umurtqa muammosi"> Umurtqa muammosi</label>
-              <label class="radio-item"><input type="radio" name="disease" value="Boshqa"> Boshqa</label>
+            <label>Қайси муаммо бўйича мурожаат қиляпсиз?</label>
+            <div class="radio-list" role="radiogroup" aria-label="Касаллик тури">
+              <label class="radio-item"><input type="radio" name="disease" value="Тизза оғриғи"> Тизза оғриғи</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Бўғим оғриғи"> Бўғим оғриғи</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Бел оғриғи"> Бел оғриғи</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Оёқ оғриғи"> Оёқ оғриғи</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Артроз / Артрит"> Артроз / Артрит</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Умуртқа муаммоси"> Умуртқа муаммоси</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Бошқа"> Бошқа</label>
             </div>
-            <div class="field-error" data-error="disease">Iltimos, muammo turini tanlang.</div>
+            <div class="field-error" data-error="disease">Илтимос, муаммо турини танланг.</div>
           </div>
 
-          <button type="submit" class="submit-btn" id="submit-btn">BEPUL MASLAHAT OLISH →</button>
+          <button type="submit" class="submit-btn" id="submit-btn">БЕПУЛ МАСЛАҲАТ ОЛИШ →</button>
 
-          <div class="form-error" id="form-error">Yuborishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.</div>
+          <div class="form-error" id="form-error">Юборишда хатолик юз берди. Илтимос, қайтадан уриниб кўринг.</div>
         </form>
 
         <div class="form-trust">
           <hr class="rule" style="margin-top: 18px;">
-          <p>Kuniga 50 dan ortiq buyurtma qabul qilinadi</p>
-          <p>Shaxsiy ma'lumotlaringiz uchinchi shaxslarga berilmaydi</p>
+          <p>Кунига 50 дан ортиқ буюртма қабул қилинади</p>
+          <p>Шахсий маълумотларингиз учинчи шахсларга берилмайди</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================
-       FOOTER
-  ============================================ -->
+  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="ornament-row" aria-hidden="true">✦ ▪ ✦</div>
-    <p><strong>© 2025 NUTVA COMPLEX</strong> — Barcha huquqlar himoyalangan</p>
-    <p>Salomat Hayot Gazetasi &nbsp;❧&nbsp; Toshkent</p>
+    <p><strong>© 2025 NUTVA COMPLEX</strong> — Барча ҳуқуқлар ҳимояланган</p>
+    <p>Саломат Ҳаёт Газетаси &nbsp;❧&nbsp; Тошкент</p>
     <p class="disclaimer">
-      Mahsulot dori-darmon emas. Shifokor maslahati tavsiya etiladi.
-      Natijalar shaxsga qarab farq qilishi mumkin.
+      Маҳсулот дори-дармон эмас. Шифокор маслаҳати тавсия этилади.
+      Натижалар шахсга қараб фарқ қилиши мумкин.
     </p>
   </footer>
 
@@ -1469,13 +1444,13 @@ img { max-width: 100%; height: auto; }
 
 <!-- Sticky mobile CTA -->
 <a href="#lead-form" class="mobile-cta" data-scroll>
-  OG'RIQDAN XALOS BO'LING → ARIZA QOLDIRING
+  ОҒРИҚДАН ХАЛОС БЎЛИНГ → АРИЗА ҚОЛДИРИНГ
 </a>
 
 <script>
-/* Inline SVG fallback so an image is always rendered, even offline */
+/* Inline SVG fallbacks so images always render */
 window.fallbackImg = function (kind) {
-  var label = kind === 'hope' ? "Erkin harakat" : "Bo'g'im og'rig'i";
+  var label = kind === 'hope' ? "Эркин ҳаракат" : "Бўғим оғриғи";
   var svg =
     "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'>" +
       "<rect width='800' height='600' fill='%23ECE5D8'/>" +
@@ -1486,30 +1461,54 @@ window.fallbackImg = function (kind) {
   return "data:image/svg+xml;utf8," + svg;
 };
 
+/* SVG mockup of the NUTVA COMPLEX box, used if nutva-product.png missing */
+window.productFallback = function () {
+  var svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 360'>" +
+      "<defs>" +
+        "<linearGradient id='bg' x1='0' x2='1' y1='0' y2='1'>" +
+          "<stop offset='0' stop-color='%23a9c9c2'/><stop offset='1' stop-color='%236c8d87'/>" +
+        "</linearGradient>" +
+      "</defs>" +
+      "<rect width='420' height='360' fill='url(%23bg)'/>" +
+      "<g transform='translate(60,70)'>" +
+        "<polygon points='0,40 220,0 300,30 300,210 220,240 0,200' fill='%23ffffff' stroke='%231A1A1A' stroke-width='2'/>" +
+        "<polygon points='220,0 300,30 300,210 220,240' fill='%231f9e6b' stroke='%231A1A1A' stroke-width='2'/>" +
+        "<rect x='0' y='40' width='220' height='30' fill='%231f9e6b'/>" +
+        "<rect x='0' y='170' width='220' height='30' fill='%231f9e6b'/>" +
+        "<text x='14' y='62' font-family='Arial, sans-serif' font-weight='900' font-size='22' fill='%23ffffff'>NUTVA</text>" +
+        "<text x='14' y='192' font-family='Arial, sans-serif' font-weight='900' font-size='22' fill='%23ffffff'>NUTVA</text>" +
+        "<text x='14' y='118' font-family='Arial, sans-serif' font-weight='900' font-size='28' fill='%231A1A1A'>COMPLEX</text>" +
+        "<text x='14' y='140' font-family='Arial, sans-serif' font-size='9' fill='%231A1A1A'>СУЯК-БЎҒИМ ВА УМУРТҚА УЧУН</text>" +
+        "<text x='14' y='152' font-family='Arial, sans-serif' font-size='9' fill='%231A1A1A'>ТАБИИЙ ДАВО ВОСИТАСИ</text>" +
+        "<circle cx='260' cy='120' r='34' fill='%23ffffff' stroke='%231A1A1A' stroke-width='1.5'/>" +
+        "<circle cx='250' cy='112' r='5' fill='%231f9e6b'/>" +
+        "<circle cx='268' cy='110' r='5' fill='%231f9e6b'/>" +
+        "<circle cx='256' cy='126' r='5' fill='%231f9e6b'/>" +
+        "<circle cx='272' cy='128' r='5' fill='%231f9e6b'/>" +
+      "</g>" +
+      "<text x='210' y='340' text-anchor='middle' font-family='PT Serif, serif' font-style='italic' font-size='12' fill='%23ffffff' opacity='0.8'>NUTVA COMPLEX — маҳсулот суратини nutva-product.png га жойланг</text>" +
+    "</svg>";
+  return "data:image/svg+xml;utf8," + svg;
+};
+
 (function () {
   'use strict';
 
-  /* ============================================
-     INTEGRATION PLACEHOLDERS — replace these
-  ============================================ */
   var TELEGRAM_BOT_TOKEN = '{TELEGRAM_BOT_TOKEN}';
   var TELEGRAM_CHAT_ID   = '{TELEGRAM_CHAT_ID}';
   var BITRIX24_WEBHOOK_URL = '{BITRIX24_WEBHOOK_URL}';
 
-  /* ============================================
-     MASTHEAD DATE (Uzbek)
-  ============================================ */
-  var months = ['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentyabr','Oktyabr','Noyabr','Dekabr'];
-  var weekdays = ['Yakshanba','Dushanba','Seshanba','Chorshanba','Payshanba','Juma','Shanba'];
+  /* Cyrillic Uzbek date for masthead */
+  var months = ['Январ','Феврал','Март','Апрел','Май','Июн','Июл','Август','Сентябр','Октябр','Ноябр','Декабр'];
+  var weekdays = ['Якшанба','Душанба','Сешанба','Чоршанба','Пайшанба','Жума','Шанба'];
   var d = new Date();
   var dateEl = document.getElementById('masthead-date');
   if (dateEl) {
-    dateEl.textContent = weekdays[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ' yil';
+    dateEl.textContent = weekdays[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ' йил';
   }
 
-  /* ============================================
-     COUNTDOWN — 4 hours, persists in sessionStorage
-  ============================================ */
+  /* Countdown — 4 hours, persists in sessionStorage */
   var COUNTDOWN_MS = 4 * 60 * 60 * 1000;
   var STORAGE_KEY = 'nutva_countdown_end';
   var endTs;
@@ -1534,7 +1533,6 @@ window.fallbackImg = function (kind) {
   function tickCountdown() {
     var diff = endTs - Date.now();
     if (diff <= 0) {
-      // Reset for next 4 hours
       endTs = Date.now() + COUNTDOWN_MS;
       try { sessionStorage.setItem(STORAGE_KEY, String(endTs)); } catch (e) {}
       diff = COUNTDOWN_MS;
@@ -1550,9 +1548,7 @@ window.fallbackImg = function (kind) {
   tickCountdown();
   setInterval(tickCountdown, 1000);
 
-  /* ============================================
-     SMOOTH SCROLL for anchor CTAs
-  ============================================ */
+  /* Smooth scroll for anchor CTAs */
   document.querySelectorAll('[data-scroll]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       var href = el.getAttribute('href');
@@ -1561,15 +1557,12 @@ window.fallbackImg = function (kind) {
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Move focus to first input for accessibility
       var firstInput = target.querySelector('input, select, textarea, button');
       if (firstInput) setTimeout(function () { firstInput.focus({ preventScroll: true }); }, 700);
     });
   });
 
-  /* ============================================
-     FADE-IN ON SCROLL (gentle, slow)
-  ============================================ */
+  /* Fade-in on scroll */
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -1584,9 +1577,7 @@ window.fallbackImg = function (kind) {
     document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ============================================
-     PHONE INPUT — auto-format XX XXX XX XX (9 digits)
-  ============================================ */
+  /* Phone input — auto-format XX XXX XX XX (9 digits) */
   var phoneInput = document.getElementById('f-phone');
   if (phoneInput) {
     phoneInput.addEventListener('input', function () {
@@ -1599,16 +1590,13 @@ window.fallbackImg = function (kind) {
       phoneInput.value = parts.join(' ');
     });
     phoneInput.addEventListener('keydown', function (e) {
-      // Allow control keys
       if (['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'].indexOf(e.key) !== -1) return;
       if (e.ctrlKey || e.metaKey) return;
       if (!/^[0-9]$/.test(e.key)) e.preventDefault();
     });
   }
 
-  /* ============================================
-     FORM VALIDATION + SUBMIT
-  ============================================ */
+  /* Form validation + submit */
   var form = document.getElementById('lead-form-el');
   var submitBtn = document.getElementById('submit-btn');
   var formError = document.getElementById('form-error');
@@ -1630,11 +1618,11 @@ window.fallbackImg = function (kind) {
 
   function sendToTelegram(payload) {
     var text =
-      '🆕 <b>Yangi ariza!</b>\n' +
-      '👤 Ism: ' + payload.name + '\n' +
-      '📞 Tel: +998' + payload.phoneDigits + '\n' +
-      '📍 Viloyat: ' + payload.region + '\n' +
-      '🏥 Muammo: ' + payload.disease;
+      '🆕 <b>Янги ариза!</b>\n' +
+      'Исм: ' + payload.name + '\n' +
+      'Тел: +998' + payload.phoneDigits + '\n' +
+      'Вилоят: ' + payload.region + '\n' +
+      'Муаммо: ' + payload.disease;
 
     return fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', {
       method: 'POST',
@@ -1668,9 +1656,9 @@ window.fallbackImg = function (kind) {
   function renderSuccess() {
     var html =
       '<div class="success-box" role="status" aria-live="polite">' +
-        '<div class="success-eyebrow">✔ Ariza qabul qilindi</div>' +
-        '<h3 class="success-headline">Arizangiz qabul qilindi!</h3>' +
-        '<p class="success-body">Tez orada mutaxassisimiz siz bilan bog\'lanadi.<br>E\'tiboringiz uchun rahmat.</p>' +
+        '<div class="success-eyebrow">✔ Ариза қабул қилинди</div>' +
+        '<h3 class="success-headline">Аризангиз қабул қилинди!</h3>' +
+        '<p class="success-body">Тез орада мутахассисимиз сиз билан боғланади.<br>Эътиборингиз учун раҳмат.</p>' +
         '<div class="ornament-row" aria-hidden="true" style="margin-top: 14px;">❧ ✦ ❧</div>' +
       '</div>';
     formContainer.outerHTML = html;
@@ -1687,15 +1675,9 @@ window.fallbackImg = function (kind) {
       var diseaseEl = form.querySelector('input[name="disease"]:checked');
       var diseaseVal = diseaseEl ? diseaseEl.value : '';
 
-      var payload = {
-        name: nameVal,
-        phoneDigits: phoneDigits,
-        region: regionVal,
-        disease: diseaseVal
-      };
+      var payload = { name: nameVal, phoneDigits: phoneDigits, region: regionVal, disease: diseaseVal };
 
       if (!validate(payload)) {
-        // Focus first error
         var firstErr = form.querySelector('.field-error.is-visible');
         if (firstErr) {
           var fieldWrap = firstErr.previousElementSibling;
@@ -1707,13 +1689,12 @@ window.fallbackImg = function (kind) {
 
       submitBtn.disabled = true;
       var originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Yuborilmoqda...';
+      submitBtn.textContent = 'Юборилмоқда...';
 
       Promise.all([
         sendToTelegram(payload).catch(function (err) { return { __error: err }; }),
         sendToBitrix(payload).catch(function (err) { return { __error: err }; })
       ]).then(function (results) {
-        // Consider success if at least one channel succeeded (or treat any non-throw as ok)
         var anyOk = results.some(function (r) { return r && !r.__error; });
         if (anyOk) {
           renderSuccess();
