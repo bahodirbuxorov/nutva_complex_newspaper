@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUTVA COMPLEX — Bo'g'im og'rig'idan xalos bo'ling | Salomat Hayot Gazetasi</title>
+<meta name="description" content="Tabiiy tarkibli mahsulot bilan bo'g'im va mushaklar uchun kompleks yordam. Bosvelliya, juka, glyukozamin asosida.">
+
+<meta property="og:title" content="Bo'g'im og'rig'idan xalos bo'ling — NUTVA COMPLEX">
+<meta property="og:description" content="Tabiiy tarkibli mahsulot bilan bo'g'im va mushaklar uchun kompleks yordam">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:type" content="website">
+
+<!-- META PIXEL CODE HERE -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ============================================
+   RESET & BASE
+============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:       #F5F0E8;
+  --paper-dark:  #ECE5D8;
+  --ink:         #1A1A1A;
+  --ink-soft:    #2E2E2E;
+  --accent:      #8B1A1A;
+  --rule:        #1A1A1A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'PT Serif', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+  position: relative;
+}
+
+/* Subtle paper grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+}
+
+main, header, footer, section { position: relative; z-index: 2; }
+
+/* ============================================
+   LAYOUT WRAPPER
+============================================ */
+.paper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+  background: transparent;
+}
+
+/* ============================================
+   HORIZONTAL RULES
+============================================ */
+.rule { border: 0; border-top: 1px solid var(--ink); margin: 14px 0; }
+.rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 12px 0; }
+.rule-double {
+  border: 0;
+  height: 7px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin: 16px 0;
+}
+
+.ornament-row {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 22px;
+  padding-left: 22px;
+  color: var(--ink);
+  margin: 12px 0;
+}
+
+/* ============================================
+   MASTHEAD
+============================================ */
+.masthead {
+  padding-top: 28px;
+}
+
+.masthead-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'PT Serif', serif;
+  font-size: 14px;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+}
+
+.masthead-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(38px, 8vw, 86px);
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin: 8px 0 4px;
+  font-style: italic;
+}
+
+.masthead-tagline {
+  text-align: center;
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 0;
+}
+
+/* ============================================
+   HEADLINE / HERO
+============================================ */
+.headline-section { padding-top: 32px; }
+
+.kicker {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin: 0 auto 14px;
+  max-width: 980px;
+}
+
+.subheadline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.6vw, 26px);
+  text-align: center;
+  line-height: 1.35;
+  max-width: 820px;
+  margin: 0 auto 22px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 36px;
+  margin-top: 28px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 24px 0;
+}
+
+.hero-image-wrap {
+  border: 1px solid var(--ink);
+  padding: 8px;
+  background: var(--paper-dark);
+}
+
+.hero-image {
+  width: 100%;
+  height: 420px;
+  display: block;
+  object-fit: cover;
+  filter: sepia(0.55) grayscale(0.4) contrast(1.05);
+}
+
+.hero-caption {
+  font-style: italic;
+  font-size: 14px;
+  padding-top: 8px;
+  border-top: 1px solid var(--ink);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.hero-body {
+  column-count: 2;
+  column-gap: 26px;
+  column-rule: 1px solid var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.hero-body p { margin-bottom: 12px; }
+
+.hero-body p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 64px;
+  float: left;
+  line-height: 0.85;
+  padding: 6px 8px 0 0;
+  color: var(--ink);
+}
+
+/* ============================================
+   FEAR / URGENCY
+============================================ */
+.fear-section { margin-top: 56px; }
+
+.section-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 42px);
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin: 16px auto 8px;
+}
+
+.section-eyebrow {
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.fear-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 36px;
+  margin-top: 28px;
+  padding: 24px 0;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+
+.fear-inset {
+  border: 3px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 28px 28px 24px;
+}
+
+.fear-inset h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 26px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 10px;
+}
+
+.fear-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 4px;
+}
+
+.fear-list li {
+  font-size: 18px;
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(0,0,0,0.4);
+  line-height: 1.4;
+}
+
+.fear-list li:last-child { border-bottom: none; }
+
+.fear-list li::before {
+  content: "— ";
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.35;
+  text-align: center;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  padding: 22px 18px;
+  margin: 30px auto 0;
+  max-width: 900px;
+}
+
+.pull-quote::before { content: "« "; color: var(--accent); }
+.pull-quote::after  { content: " »"; color: var(--accent); }
+
+.fear-image-wrap {
+  border: 1px solid var(--ink);
+  padding: 8px;
+  background: var(--paper-dark);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fear-image {
+  width: 100%;
+  flex: 1;
+  min-height: 280px;
+  object-fit: cover;
+  filter: sepia(0.55) grayscale(0.4) contrast(1.05);
+}
+
+/* ============================================
+   NATURAL SOLUTION
+============================================ */
+.solution-section { margin-top: 64px; }
+
+.solution-intro {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  line-height: 1.55;
+}
+
+.fact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.fact-card {
+  border: 2px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 22px 22px 24px;
+  position: relative;
+}
+
+.fact-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+
+.fact-card-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--accent);
+  position: relative;
+}
+
+.fact-card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.fact-card-rule {
+  border: 0;
+  border-top: 1px solid var(--ink);
+  width: 38px;
+  margin: 8px auto 12px;
+  position: relative;
+}
+
+.fact-card-body {
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: center;
+  position: relative;
+}
+
+/* ============================================
+   PRODUCT SPOTLIGHT
+============================================ */
+.product-section { margin-top: 64px; }
+
+.product-box {
+  border: 5px double var(--ink);
+  background: var(--paper-dark);
+  padding: 42px 32px 40px;
+  text-align: center;
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.product-box::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+
+.product-eyebrow {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(44px, 7vw, 72px);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin: 8px 0 6px;
+}
+
+.product-tagline {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+.product-checklist {
+  list-style: none;
+  text-align: left;
+  max-width: 540px;
+  margin: 24px auto 28px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.product-checklist li {
+  font-size: 19px;
+  padding: 8px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.product-checklist li::before {
+  content: "✔";
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 20px;
+  flex: 0 0 auto;
+}
+
+.product-closer {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  margin-top: 18px;
+  line-height: 1.4;
+}
+
+.stamp {
+  position: absolute;
+  top: -28px;
+  right: -22px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 4px double var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ink);
+  transform: rotate(-14deg);
+  text-align: center;
+  line-height: 1;
+  z-index: 3;
+}
+
+/* ============================================
+   VIDEO TESTIMONIALS
+============================================ */
+.video-section { margin-top: 72px; }
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.video-card {
+  border: 3px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 14px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  overflow: hidden;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-caption {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ink);
+}
+
+.video-ornament {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.video-caption p {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.rating-box {
+  margin: 36px auto 0;
+  max-width: 520px;
+  border: 3px double var(--ink);
+  padding: 18px 24px;
+  text-align: center;
+  background: var(--paper-dark);
+}
+
+.rating-stars {
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.rating-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   COUPON
+============================================ */
+.coupon-section { margin-top: 72px; }
+
+.coupon {
+  position: relative;
+  border: 3px dashed var(--ink);
+  padding: 36px 32px 32px;
+  background: var(--paper-dark);
+  text-align: center;
+  overflow: hidden;
+}
+
+.coupon-scissors {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-family: 'PT Serif', serif;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+}
+
+.coupon-eyebrow {
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.coupon-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(28px, 4.4vw, 44px);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.coupon-stamp {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: 0.18em;
+  padding: 14px 26px;
+  border: 3px double var(--paper);
+  box-shadow: inset 0 0 0 3px var(--accent), 0 0 0 2px var(--accent);
+  transform: rotate(-3deg);
+  margin: 10px 0 18px;
+  text-transform: uppercase;
+}
+
+.coupon-timer-label {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.coupon-timer {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 64px);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  display: inline-block;
+  padding: 6px 18px;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  margin-bottom: 22px;
+}
+
+.coupon-timer .sep { color: var(--accent); padding: 0 4px; }
+
+.btn-primary {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--accent);
+  color: var(--paper);
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   LEAD CAPTURE FORM
+============================================ */
+.form-section { margin-top: 72px; }
+
+.form-box {
+  border: 4px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 40px 36px;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.form-box::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(26px, 4vw, 38px);
+  text-align: center;
+  margin: 6px 0 6px;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.form-sub {
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-fields {
+  display: grid;
+  gap: 18px;
+  position: relative;
+}
+
+.form-field { display: block; }
+
+.form-field label {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.input-base,
+.form-field input[type="text"],
+.form-field input[type="tel"],
+.form-field select {
+  width: 100%;
+  font-family: 'PT Serif', serif;
+  font-size: 18px;
+  padding: 14px 14px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  color: var(--ink);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.phone-wrap {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+}
+
+.phone-prefix {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  border-right: 0;
+  user-select: none;
+}
+
+.phone-wrap input { border-left: 0; }
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  color: var(--ink);
+}
+
+.form-field select {
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.radio-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 18px;
+  border: 1px solid var(--ink);
+  padding: 14px;
+  background: var(--paper);
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  padding: 8px 6px;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.radio-item input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  position: relative;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.radio-item input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.radio-item input[type="radio"]:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.submit-btn:hover:not(:disabled),
+.submit-btn:focus:not(:disabled) {
+  background: var(--accent);
+}
+
+.submit-btn:disabled { opacity: 0.7; cursor: wait; }
+
+.form-trust {
+  margin-top: 18px;
+  text-align: center;
+  position: relative;
+}
+
+.form-trust p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-trust p:first-child::before {
+  content: "✔ ";
+  color: var(--accent);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.form-error {
+  display: none;
+  background: #FCEAEA;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 14px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 14px;
+}
+.form-error.is-visible { display: block; }
+
+.field-error {
+  color: var(--accent);
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+  display: none;
+}
+.field-error.is-visible { display: block; }
+
+.success-box {
+  border: 4px solid var(--ink);
+  background: var(--paper-dark);
+  padding: 50px 32px;
+  text-align: center;
+  position: relative;
+}
+.success-box::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
+}
+.success-eyebrow {
+  font-style: italic;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.success-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(26px, 3.6vw, 36px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.success-body {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.site-footer {
+  margin-top: 80px;
+  padding: 24px 0 40px;
+  border-top: 3px double var(--ink);
+  text-align: center;
+}
+
+.site-footer p { font-size: 15px; line-height: 1.6; }
+.site-footer .disclaimer {
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 10px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+}
+
+/* ============================================
+   STICKY MOBILE CTA
+============================================ */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    color: var(--paper);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
+    border-top: 3px solid var(--accent);
+  }
+  body { padding-bottom: 70px; }
+}
+
+/* ============================================
+   FADE-IN ON SCROLL
+============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-image { height: 320px; }
+  .hero-body { column-count: 1; }
+  .fear-grid { grid-template-columns: 1fr; gap: 24px; }
+  .fact-cards { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
+  .radio-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .paper { padding: 0 18px 60px; }
+  body { font-size: 17px; }
+  .masthead-top { flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: 12px; }
+  .stamp { width: 100px; height: 100px; font-size: 16px; top: -22px; right: -10px; }
+  .product-box { padding: 36px 22px 32px; }
+  .form-box { padding: 30px 22px; }
+  .coupon { padding: 30px 20px 26px; }
+  .coupon-scissors { font-size: 12px; }
+  .ornament-row { letter-spacing: 16px; padding-left: 16px; }
+}
+
+@media print {
+  body::before { display: none; }
+  .mobile-cta, .video-section { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="paper">
+
+  <!-- ============================================
+       1. MASTHEAD
+  ============================================ -->
+  <header class="masthead" role="banner">
+    <hr class="rule">
+    <div class="masthead-top">
+      <span>№ 142 — Maxsus nashr</span>
+      <span>Toshkent</span>
+      <span id="masthead-date">2026 yil</span>
+    </div>
+    <hr class="rule">
+    <h1 class="masthead-title">Salomat Hayot Gazetasi</h1>
+    <hr class="rule">
+    <div class="masthead-tagline">Sog'liq — eng katta boylik &nbsp;❧&nbsp; Mustaqil tibbiy axborot nashri</div>
+    <hr class="rule-thick">
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         2. MAIN HEADLINE (Muammo)
+    ============================================ -->
+    <section class="headline-section fade-in" aria-labelledby="main-headline">
+      <div class="kicker">Bosh maqola &nbsp;❧&nbsp; Sog'liq xabarnomasi</div>
+      <h2 class="headline" id="main-headline">HARAKATLANGANDA CHIDAB BO'LMAS OG'RIQ BORMI?</h2>
+      <p class="subheadline">Bo'g'im kasalliklari asta-sekin insonni ilojsiz holatga olib keladi</p>
+      <div class="ornament-row" aria-hidden="true">✦ ▪ ✦</div>
+
+      <div class="hero-grid">
+        <figure class="hero-image-wrap">
+          <img class="hero-image"
+               src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=900&q=80"
+               alt="Bo'g'im og'rig'idan azob chekayotgan keksa inson">
+          <figcaption class="hero-caption">Surat: zinadan chiqishda og'riqdan azoblanayotgan bemor</figcaption>
+        </figure>
+
+        <div class="hero-body">
+          <p>Avval zinadan chiqish qiyinlashadi, keyin uzoq yurish, oxirida esa odam o'zi mustaqil harakatlana olmay qolishi mumkin. Bu jarayon ko'pchilik uchun sezilmas tarzda boshlanadi.</p>
+          <p>Oyoq, tizza va bo'g'imlardagi og'riqlar dastlab oddiy holatdek tuyulishi mumkin. Ammo vaqtida e'tibor berilmasa, bu muammo kundalik hayotdagi harakatni cheklab, jiddiy asoratlarga olib kelishi ehtimoli bor.</p>
+          <p>Shu sababli bo'g'imlarga o'z vaqtida e'tibor berish juda muhim — chunki harakat erkinligi insonning faol hayotidagi eng katta boyliklardan biridir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         3. FEAR / URGENCY
+    ============================================ -->
+    <section class="fear-section fade-in" aria-labelledby="fear-headline">
+      <div class="section-eyebrow">Diqqat &nbsp;❧&nbsp; Ogohlantirish</div>
+      <h2 class="section-headline" id="fear-headline">Vaqt — Bo'g'imlar Dushmani</h2>
+      <hr class="rule">
+
+      <div class="fear-grid">
+        <div class="fear-inset">
+          <h3>Vaqtida e'tibor berilmasa…</h3>
+          <p style="font-style: italic; margin-bottom: 6px;">
+            Dastlab oddiy og'riq yoki yengil qotishish kabi ko'ringan holatlar vaqt o'tishi bilan quyidagi muammolarni keltirib chiqarishi mumkin:
+          </p>
+          <ul class="fear-list">
+            <li>yurishda qiyinchilik</li>
+            <li>zinadan chiqishda og'riq</li>
+            <li>oyoq va tizzalarda shish</li>
+            <li>ertalabki qotishish</li>
+            <li>mushaklarda kuchli noqulaylik</li>
+          </ul>
+        </div>
+
+        <figure class="fear-image-wrap">
+          <img class="fear-image"
+               src="https://images.unsplash.com/photo-1559750255-3c8a91761efe?auto=format&fit=crop&w=900&q=80"
+               alt="Erkin va qulay harakat qilayotgan keksa inson — umid ramzi">
+          <figcaption class="hero-caption">Surat: erkin harakat — insonning eng katta boyligi</figcaption>
+        </figure>
+      </div>
+
+      <blockquote class="pull-quote">
+        Dastlab oddiy og'riq… keyinchalik operatsiya.
+        Bo'g'im va suyaklarga erta bosqichdayoq g'amxo'rlik qilish — bu kelajakdagi sog'lig'ingiz uchun qilingan eng to'g'ri qaror.
+      </blockquote>
+    </section>
+
+    <!-- ============================================
+         4. NATURAL SOLUTION
+    ============================================ -->
+    <section class="solution-section fade-in" aria-labelledby="solution-headline">
+      <div class="section-eyebrow">Tibbiyot &nbsp;❧&nbsp; Tabiat kuchi</div>
+      <h2 class="section-headline" id="solution-headline">Tabiat Bergan Yechim</h2>
+      <hr class="rule">
+      <p class="solution-intro">
+        Tabiiy o'simliklar asosida yaratilgan mahsulotimiz bo'g'im va mushaklardagi
+        noqulayliklarga qarshi kompleks yordam beradi. Mana — uning uchta asosiy tarkibi:
+      </p>
+
+      <div class="fact-cards">
+        <article class="fact-card">
+          <div class="fact-card-num">№ 1 &nbsp;·&nbsp; Tabiiy tarkib</div>
+          <h3 class="fact-card-title">BOSVELLIYA</h3>
+          <hr class="fact-card-rule">
+          <p class="fact-card-body">
+            Bo'g'imlardagi noqulaylik va yallig'lanishni kamaytirishga yordam beradi,
+            tog'ay to'qimalarini qo'llab-quvvatlaydi.
+          </p>
+        </article>
+
+        <article class="fact-card">
+          <div class="fact-card-num">№ 2 &nbsp;·&nbsp; Tabiiy tarkib</div>
+          <h3 class="fact-card-title">JUKA</h3>
+          <hr class="fact-card-rule">
+          <p class="fact-card-body">
+            Spazm va shishlarning oldini olishga ko'maklashadi,
+            mushaklarni tinchlantiradi va dam olishga yordam beradi.
+          </p>
+        </article>
+
+        <article class="fact-card">
+          <div class="fact-card-num">№ 3 &nbsp;·&nbsp; Tabiiy tarkib</div>
+          <h3 class="fact-card-title">GLYUKOZAMIN</h3>
+          <hr class="fact-card-rule">
+          <p class="fact-card-body">
+            Bo'g'im egiluvchanligini oshirish va to'qimalar regeneratsiyasini
+            qo'llab-quvvatlashga yordam beradi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================
+         5. PRODUCT SPOTLIGHT
+    ============================================ -->
+    <section class="product-section fade-in" aria-labelledby="product-name">
+      <div class="ornament-row" aria-hidden="true">❧ ✦ ❧</div>
+      <div class="product-box">
+        <div class="stamp" aria-label="Original mahsulot"><span>ORIGINAL</span></div>
+        <div class="product-eyebrow">Maxsus tavsiya etiladi</div>
+        <h2 class="product-name" id="product-name">NUTVA COMPLEX</h2>
+        <p class="product-tagline">Bo'g'im va mushaklar uchun tabiiy kompleks yordam</p>
+
+        <ul class="product-checklist">
+          <li>Tabiiy tarkib — o'simliklar asosida</li>
+          <li>Kundalik harakatni qo'llab-quvvatlaydi</li>
+          <li>Bo'g'im va mushaklar uchun kompleks yordam</li>
+          <li>Faol hayot tarzini saqlashga yordam beradi</li>
+        </ul>
+
+        <p class="product-closer">Sog'lom bo'g'imlar — erkin va qulay harakat demakdir.</p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         6. VIDEO TESTIMONIALS
+    ============================================ -->
+    <section class="video-section fade-in" aria-labelledby="video-headline">
+      <div class="section-eyebrow">Mijozlarimiz guvohliklaridan</div>
+      <h2 class="section-headline" id="video-headline">MIJOZLARIMIZNING SO'ZLARI</h2>
+      <p class="solution-intro" style="margin-bottom: 6px;">Haqiqiy insonlar — haqiqiy natijalar</p>
+      <hr class="rule">
+
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/dxRkTXmZuZE?rel=0&modestbranding=1&playsinline=1"
+              title="Mijoz guvohligi — Mohira"
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <span class="video-ornament" aria-hidden="true">❧</span>
+            <p>Toshkentlik Mohira, 58 yosh</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/9WmRTf_oMoI?rel=0&modestbranding=1&playsinline=1"
+              title="Mijoz guvohligi — Karim"
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <span class="video-ornament" aria-hidden="true">❧</span>
+            <p>Samarqandlik Karim aka, 62 yosh</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/Uc6PwZlyt5o?rel=0&modestbranding=1&playsinline=1"
+              title="Mijoz guvohligi — Saodat"
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <span class="video-ornament" aria-hidden="true">❧</span>
+            <p>Farg'onalik Saodat opa, 55 yosh</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/3NszuJGqnxU?rel=0&modestbranding=1&playsinline=1"
+              title="Mijoz guvohligi — Rahim"
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-caption">
+            <span class="video-ornament" aria-hidden="true">❧</span>
+            <p>Buxorolik Rahim aka, 64 yosh</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="rating-box" role="group" aria-label="Mijozlar bahosi">
+        <div class="rating-stars" aria-hidden="true">★★★★★</div>
+        <div class="rating-text">4.8 — 1200+ mijoz fikri</div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         7. COUPON
+    ============================================ -->
+    <section class="coupon-section fade-in" aria-labelledby="coupon-title">
+      <div class="ornament-row" aria-hidden="true">✂ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</div>
+      <div class="coupon">
+        <div class="coupon-scissors" aria-hidden="true">✂ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</div>
+        <div class="coupon-eyebrow">Maxsus taklif &nbsp;❧&nbsp; Cheklangan vaqt</div>
+        <h2 class="coupon-title" id="coupon-title">CHEGIRMA OLISH KUPONI</h2>
+
+        <div class="coupon-stamp" aria-label="O'ttiz foiz chegirma">30% CHEGIRMA</div>
+
+        <p class="coupon-timer-label">Ushbu taklif tugashiga qoldi:</p>
+        <div class="coupon-timer" id="countdown" aria-live="polite" aria-atomic="true">
+          <span id="cd-h">04</span><span class="sep">:</span><span id="cd-m">00</span><span class="sep">:</span><span id="cd-s">00</span>
+        </div>
+        <div>
+          <a href="#lead-form" class="btn-primary" data-scroll>Chegirmani olish →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         8. LEAD CAPTURE FORM
+    ============================================ -->
+    <section class="form-section fade-in" id="lead-form" aria-labelledby="form-headline">
+      <div class="section-eyebrow">Bepul maslahat olish</div>
+      <hr class="rule">
+      <h2 class="section-headline" id="form-headline">BUGUN ARIZA QOLDIRING</h2>
+      <hr class="rule">
+
+      <div class="form-box" id="form-container">
+        <div class="form-headline" style="font-size: 24px;">Bo'g'im salomatligi uchun birinchi qadam</div>
+        <p class="form-sub">Quyidagi anketani to'ldiring — mutaxassisimiz sizga qisqa muddat ichida bog'lanadi.</p>
+
+        <form id="lead-form-el" class="form-fields" novalidate>
+
+          <div class="form-field">
+            <label for="f-name">Ismingiz:</label>
+            <input type="text" id="f-name" name="name" placeholder="Ism va familiya" required autocomplete="name">
+            <div class="field-error" data-error="name">Iltimos, ismingizni kiriting.</div>
+          </div>
+
+          <div class="form-field">
+            <label for="f-phone">Telefon raqamingiz:</label>
+            <div class="phone-wrap">
+              <div class="phone-prefix" aria-label="O'zbekiston kodi">+998</div>
+              <input type="tel" id="f-phone" name="phone" placeholder="XX XXX XX XX" inputmode="numeric" required autocomplete="tel-national">
+            </div>
+            <div class="field-error" data-error="phone">Iltimos, to'g'ri telefon raqamingizni kiriting (9 ta raqam).</div>
+          </div>
+
+          <div class="form-field">
+            <label for="f-region">Viloyatingiz:</label>
+            <div class="select-wrap">
+              <select id="f-region" name="region" required>
+                <option value="" disabled selected>Tanlang...</option>
+                <option disabled>──────── O'zbekiston viloyatlari ────────</option>
+                <option value="Toshkent shahri">Toshkent shahri</option>
+                <option value="Toshkent viloyati">Toshkent viloyati</option>
+                <option value="Andijon viloyati">Andijon viloyati</option>
+                <option value="Farg'ona viloyati">Farg'ona viloyati</option>
+                <option value="Namangan viloyati">Namangan viloyati</option>
+                <option value="Samarqand viloyati">Samarqand viloyati</option>
+                <option value="Buxoro viloyati">Buxoro viloyati</option>
+                <option value="Navoiy viloyati">Navoiy viloyati</option>
+                <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+                <option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
+                <option value="Jizzax viloyati">Jizzax viloyati</option>
+                <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+                <option value="Xorazm viloyati">Xorazm viloyati</option>
+                <option value="Qoraqalpog'iston Respublikasi">Qoraqalpog'iston Respublikasi</option>
+                <option disabled>──────── Xorij ────────</option>
+                <option value="Boshqa davlat">Boshqa davlat</option>
+              </select>
+            </div>
+            <div class="field-error" data-error="region">Iltimos, viloyatingizni tanlang.</div>
+          </div>
+
+          <div class="form-field">
+            <label as="legend">Qaysi muammo bo'yicha murojaat qilyapsiz?</label>
+            <div class="radio-list" role="radiogroup" aria-label="Kasallik turi">
+              <label class="radio-item"><input type="radio" name="disease" value="Tizza og'rig'i"> Tizza og'rig'i</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Bo'g'im og'rig'i"> Bo'g'im og'rig'i</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Bel og'rig'i"> Bel og'rig'i</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Oyoq og'rig'i"> Oyoq og'rig'i</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Artroz / Artrit"> Artroz / Artrit</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Umurtqa muammosi"> Umurtqa muammosi</label>
+              <label class="radio-item"><input type="radio" name="disease" value="Boshqa"> Boshqa</label>
+            </div>
+            <div class="field-error" data-error="disease">Iltimos, muammo turini tanlang.</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">BEPUL MASLAHAT OLISH →</button>
+
+          <div class="form-error" id="form-error">Yuborishda xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring.</div>
+        </form>
+
+        <div class="form-trust">
+          <hr class="rule" style="margin-top: 18px;">
+          <p>Kuniga 50 dan ortiq buyurtma qabul qilinadi</p>
+          <p>Shaxsiy ma'lumotlaringiz uchinchi shaxslarga berilmaydi</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="ornament-row" aria-hidden="true">✦ ▪ ✦</div>
+    <p><strong>© 2025 NUTVA COMPLEX</strong> — Barcha huquqlar himoyalangan</p>
+    <p>Salomat Hayot Gazetasi &nbsp;❧&nbsp; Toshkent</p>
+    <p class="disclaimer">
+      Mahsulot dori-darmon emas. Shifokor maslahati tavsiya etiladi.
+      Natijalar shaxsga qarab farq qilishi mumkin.
+    </p>
+  </footer>
+
+</div>
+
+<!-- Sticky mobile CTA -->
+<a href="#lead-form" class="mobile-cta" data-scroll>
+  OG'RIQDAN XALOS BO'LING → ARIZA QOLDIRING
+</a>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================
+     INTEGRATION PLACEHOLDERS — replace these
+  ============================================ */
+  var TELEGRAM_BOT_TOKEN = '{TELEGRAM_BOT_TOKEN}';
+  var TELEGRAM_CHAT_ID   = '{TELEGRAM_CHAT_ID}';
+  var BITRIX24_WEBHOOK_URL = '{BITRIX24_WEBHOOK_URL}';
+
+  /* ============================================
+     MASTHEAD DATE (Uzbek)
+  ============================================ */
+  var months = ['Yanvar','Fevral','Mart','Aprel','May','Iyun','Iyul','Avgust','Sentyabr','Oktyabr','Noyabr','Dekabr'];
+  var weekdays = ['Yakshanba','Dushanba','Seshanba','Chorshanba','Payshanba','Juma','Shanba'];
+  var d = new Date();
+  var dateEl = document.getElementById('masthead-date');
+  if (dateEl) {
+    dateEl.textContent = weekdays[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ' yil';
+  }
+
+  /* ============================================
+     COUNTDOWN — 4 hours, persists in sessionStorage
+  ============================================ */
+  var COUNTDOWN_MS = 4 * 60 * 60 * 1000;
+  var STORAGE_KEY = 'nutva_countdown_end';
+  var endTs;
+  try {
+    var stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored && !isNaN(parseInt(stored, 10)) && parseInt(stored, 10) > Date.now()) {
+      endTs = parseInt(stored, 10);
+    } else {
+      endTs = Date.now() + COUNTDOWN_MS;
+      sessionStorage.setItem(STORAGE_KEY, String(endTs));
+    }
+  } catch (e) {
+    endTs = Date.now() + COUNTDOWN_MS;
+  }
+
+  var hEl = document.getElementById('cd-h');
+  var mEl = document.getElementById('cd-m');
+  var sEl = document.getElementById('cd-s');
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tickCountdown() {
+    var diff = endTs - Date.now();
+    if (diff <= 0) {
+      // Reset for next 4 hours
+      endTs = Date.now() + COUNTDOWN_MS;
+      try { sessionStorage.setItem(STORAGE_KEY, String(endTs)); } catch (e) {}
+      diff = COUNTDOWN_MS;
+    }
+    var h = Math.floor(diff / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    if (hEl) hEl.textContent = pad(h);
+    if (mEl) mEl.textContent = pad(m);
+    if (sEl) sEl.textContent = pad(s);
+  }
+
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+
+  /* ============================================
+     SMOOTH SCROLL for anchor CTAs
+  ============================================ */
+  document.querySelectorAll('[data-scroll]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      var href = el.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Move focus to first input for accessibility
+      var firstInput = target.querySelector('input, select, textarea, button');
+      if (firstInput) setTimeout(function () { firstInput.focus({ preventScroll: true }); }, 700);
+    });
+  });
+
+  /* ============================================
+     FADE-IN ON SCROLL (gentle, slow)
+  ============================================ */
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+  } else {
+    document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ============================================
+     PHONE INPUT — auto-format XX XXX XX XX (9 digits)
+  ============================================ */
+  var phoneInput = document.getElementById('f-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      var digits = phoneInput.value.replace(/\D/g, '').slice(0, 9);
+      var parts = [];
+      if (digits.length > 0) parts.push(digits.slice(0, 2));
+      if (digits.length > 2) parts.push(digits.slice(2, 5));
+      if (digits.length > 5) parts.push(digits.slice(5, 7));
+      if (digits.length > 7) parts.push(digits.slice(7, 9));
+      phoneInput.value = parts.join(' ');
+    });
+    phoneInput.addEventListener('keydown', function (e) {
+      // Allow control keys
+      if (['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'].indexOf(e.key) !== -1) return;
+      if (e.ctrlKey || e.metaKey) return;
+      if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+    });
+  }
+
+  /* ============================================
+     FORM VALIDATION + SUBMIT
+  ============================================ */
+  var form = document.getElementById('lead-form-el');
+  var submitBtn = document.getElementById('submit-btn');
+  var formError = document.getElementById('form-error');
+  var formContainer = document.getElementById('form-container');
+
+  function showFieldError(name, show) {
+    var el = form.querySelector('[data-error="' + name + '"]');
+    if (el) el.classList.toggle('is-visible', !!show);
+  }
+
+  function validate(data) {
+    var ok = true;
+    if (!data.name || data.name.trim().length < 2) { showFieldError('name', true); ok = false; } else showFieldError('name', false);
+    if (!data.phoneDigits || data.phoneDigits.length !== 9) { showFieldError('phone', true); ok = false; } else showFieldError('phone', false);
+    if (!data.region) { showFieldError('region', true); ok = false; } else showFieldError('region', false);
+    if (!data.disease) { showFieldError('disease', true); ok = false; } else showFieldError('disease', false);
+    return ok;
+  }
+
+  function sendToTelegram(payload) {
+    var text =
+      '🆕 <b>Yangi ariza!</b>\n' +
+      '👤 Ism: ' + payload.name + '\n' +
+      '📞 Tel: +998' + payload.phoneDigits + '\n' +
+      '📍 Viloyat: ' + payload.region + '\n' +
+      '🏥 Muammo: ' + payload.disease;
+
+    return fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        parse_mode: 'HTML',
+        text: text
+      })
+    });
+  }
+
+  function sendToBitrix(payload) {
+    return fetch(BITRIX24_WEBHOOK_URL + '/crm.lead.add.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: {
+          TITLE: 'NUTVA COMPLEX — ' + payload.name,
+          NAME: payload.name,
+          PHONE: [{ VALUE: '+998' + payload.phoneDigits, VALUE_TYPE: 'WORK' }],
+          UF_CRM_REGION: payload.region,
+          UF_CRM_DISEASE: payload.disease,
+          SOURCE_ID: 'WEB',
+          SOURCE_DESCRIPTION: 'Landing Page — NUTVA COMPLEX'
+        }
+      })
+    });
+  }
+
+  function renderSuccess() {
+    var html =
+      '<div class="success-box" role="status" aria-live="polite">' +
+        '<div class="success-eyebrow">✔ Ariza qabul qilindi</div>' +
+        '<h3 class="success-headline">Arizangiz qabul qilindi!</h3>' +
+        '<p class="success-body">Tez orada mutaxassisimiz siz bilan bog\'lanadi.<br>E\'tiboringiz uchun rahmat.</p>' +
+        '<div class="ornament-row" aria-hidden="true" style="margin-top: 14px;">❧ ✦ ❧</div>' +
+      '</div>';
+    formContainer.outerHTML = html;
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      formError.classList.remove('is-visible');
+
+      var nameVal = (document.getElementById('f-name').value || '').trim();
+      var phoneDigits = (document.getElementById('f-phone').value || '').replace(/\D/g, '');
+      var regionVal = document.getElementById('f-region').value;
+      var diseaseEl = form.querySelector('input[name="disease"]:checked');
+      var diseaseVal = diseaseEl ? diseaseEl.value : '';
+
+      var payload = {
+        name: nameVal,
+        phoneDigits: phoneDigits,
+        region: regionVal,
+        disease: diseaseVal
+      };
+
+      if (!validate(payload)) {
+        // Focus first error
+        var firstErr = form.querySelector('.field-error.is-visible');
+        if (firstErr) {
+          var fieldWrap = firstErr.previousElementSibling;
+          var input = fieldWrap ? fieldWrap.querySelector('input, select') : null;
+          if (input) input.focus();
+        }
+        return;
+      }
+
+      submitBtn.disabled = true;
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Yuborilmoqda...';
+
+      Promise.all([
+        sendToTelegram(payload).catch(function (err) { return { __error: err }; }),
+        sendToBitrix(payload).catch(function (err) { return { __error: err }; })
+      ]).then(function (results) {
+        // Consider success if at least one channel succeeded (or treat any non-throw as ok)
+        var anyOk = results.some(function (r) { return r && !r.__error; });
+        if (anyOk) {
+          renderSuccess();
+        } else {
+          formError.classList.add('is-visible');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }).catch(function () {
+        formError.classList.add('is-visible');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
