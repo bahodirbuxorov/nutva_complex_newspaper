@@ -507,17 +507,33 @@ img { max-width: 100%; height: auto; }
 ============================================ */
 .video-section { margin-top: 72px; }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+.video-slider-wrap {
+  position: relative;
   margin-top: 30px;
 }
+
+.video-slider {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 4px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink) var(--paper-dark);
+}
+
+.video-slider::-webkit-scrollbar { height: 10px; }
+.video-slider::-webkit-scrollbar-track { background: var(--paper-dark); border: 1px solid var(--ink); }
+.video-slider::-webkit-scrollbar-thumb { background: var(--ink); }
 
 .video-card {
   border: 3px solid var(--ink);
   background: var(--paper-dark);
   padding: 14px;
+  flex: 0 0 280px;
+  scroll-snap-align: start;
 }
 
 .video-frame {
@@ -527,8 +543,58 @@ img { max-width: 100%; height: auto; }
   background: var(--ink);
   border: 1px solid var(--ink);
   overflow: hidden;
-  max-width: 360px;
   margin: 0 auto;
+}
+
+.slider-btn {
+  position: absolute;
+  top: calc(50% - 18px);
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 2px var(--ink);
+  border-radius: 0;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.slider-btn:hover, .slider-btn:focus {
+  background: var(--accent);
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.slider-btn-prev { left: -14px; }
+.slider-btn-next { right: -14px; }
+
+.slider-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.slider-hint {
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 901px) {
+  .slider-hint { display: none; }
 }
 
 .video-frame iframe {
@@ -1110,7 +1176,7 @@ img { max-width: 100%; height: auto; }
   .paper { padding: 0 24px 70px; }
   .hero-image, .fear-image { height: 380px; }
   .fact-cards { gap: 18px; }
-  .video-grid { gap: 22px; }
+  .video-slider { gap: 18px; }
 }
 
 @media (max-width: 900px) {
@@ -1121,9 +1187,12 @@ img { max-width: 100%; height: auto; }
   .fear-grid { grid-template-columns: 1fr; gap: 24px; padding: 20px 0; }
   .fact-cards { grid-template-columns: 1fr; gap: 16px; }
   .product-grid { grid-template-columns: 1fr; gap: 24px; }
-  .video-grid { grid-template-columns: 1fr; gap: 22px; }
   .radio-list { grid-template-columns: 1fr; }
   .product-checklist { padding: 14px 16px; }
+  .video-card { flex: 0 0 240px; }
+  .slider-btn { width: 42px; height: 42px; font-size: 28px; }
+  .slider-btn-prev { left: -8px; }
+  .slider-btn-next { right: -8px; }
 }
 
 @media (max-width: 640px) {
@@ -1347,72 +1416,78 @@ img { max-width: 100%; height: auto; }
 
     <!-- 6. VIDEO TESTIMONIALS -->
     <section class="video-section fade-in" aria-labelledby="video-headline">
-      <div class="section-eyebrow">Мижозларимиз гувоҳликларидан</div>
+      <div class="section-eyebrow">Отзивлар</div>
       <h2 class="section-headline" id="video-headline">МИЖОЗЛАРИМИЗНИНГ СЎЗЛАРИ</h2>
       <p class="solution-intro" style="margin-bottom: 6px;">Ҳақиқий инсонлар — ҳақиқий натижалар</p>
       <hr class="rule">
 
-      <div class="video-grid">
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/dxRkTXmZuZE?rel=0&modestbranding=1&playsinline=1"
-              title="Мижоз гувоҳлиги — Моҳира"
-              loading="lazy"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video-caption">
-            <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Тошкентлик Моҳира, 58 ёш</p>
-          </div>
-        </article>
+      <div class="video-slider-wrap">
+        <button type="button" class="slider-btn slider-btn-prev" aria-label="Олдинги видео">‹</button>
+        <div class="video-slider" id="video-slider" role="region" aria-label="Мижоз видеолари">
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/dxRkTXmZuZE?rel=0&modestbranding=1&playsinline=1"
+                title="Мижоз гувоҳлиги — Моҳира"
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <span class="video-ornament" aria-hidden="true">❧</span>
+              <p>Тошкентлик Моҳира, 58 ёш</p>
+            </div>
+          </article>
 
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/9WmRTf_oMoI?rel=0&modestbranding=1&playsinline=1"
-              title="Мижоз гувоҳлиги — Карим"
-              loading="lazy"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video-caption">
-            <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Самарқандлик Карим ака, 62 ёш</p>
-          </div>
-        </article>
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/9WmRTf_oMoI?rel=0&modestbranding=1&playsinline=1"
+                title="Мижоз гувоҳлиги — Карим"
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <span class="video-ornament" aria-hidden="true">❧</span>
+              <p>Самарқандлик Карим ака, 62 ёш</p>
+            </div>
+          </article>
 
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/Uc6PwZlyt5o?rel=0&modestbranding=1&playsinline=1"
-              title="Мижоз гувоҳлиги — Саодат"
-              loading="lazy"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video-caption">
-            <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Фарғоналик Саодат опа, 55 ёш</p>
-          </div>
-        </article>
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/Uc6PwZlyt5o?rel=0&modestbranding=1&playsinline=1"
+                title="Мижоз гувоҳлиги — Саодат"
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <span class="video-ornament" aria-hidden="true">❧</span>
+              <p>Фарғоналик Саодат опа, 55 ёш</p>
+            </div>
+          </article>
 
-        <article class="video-card">
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/3NszuJGqnxU?rel=0&modestbranding=1&playsinline=1"
-              title="Мижоз гувоҳлиги — Раҳим"
-              loading="lazy"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video-caption">
-            <span class="video-ornament" aria-hidden="true">❧</span>
-            <p>Бухоролик Раҳим ака, 64 ёш</p>
-          </div>
-        </article>
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/3NszuJGqnxU?rel=0&modestbranding=1&playsinline=1"
+                title="Мижоз гувоҳлиги — Раҳим"
+                loading="lazy"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">
+              <span class="video-ornament" aria-hidden="true">❧</span>
+              <p>Бухоролик Раҳим ака, 64 ёш</p>
+            </div>
+          </article>
+        </div>
+        <button type="button" class="slider-btn slider-btn-next" aria-label="Кейинги видео">›</button>
       </div>
+
+      <div class="slider-hint">← Кўпроқ видеоларни кўриш учун сурилинг →</div>
 
       <div class="rating-box" role="group" aria-label="Мижозлар баҳоси">
         <div class="rating-stars" aria-hidden="true">★★★★★</div>
@@ -1661,6 +1736,35 @@ window.productFallback = function () {
     document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
   } else {
     document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* Video slider — horizontal scroll with prev/next buttons */
+  var slider = document.getElementById('video-slider');
+  var prevBtn = document.querySelector('.slider-btn-prev');
+  var nextBtn = document.querySelector('.slider-btn-next');
+
+  function scrollSlider(direction) {
+    if (!slider) return;
+    var card = slider.querySelector('.video-card');
+    if (!card) return;
+    var styles = window.getComputedStyle(slider);
+    var gap = parseInt(styles.gap || styles.columnGap || '0', 10) || 22;
+    slider.scrollBy({ left: (card.offsetWidth + gap) * direction, behavior: 'smooth' });
+  }
+
+  function updateSliderBtns() {
+    if (!slider || !prevBtn || !nextBtn) return;
+    var maxScroll = slider.scrollWidth - slider.clientWidth;
+    prevBtn.disabled = slider.scrollLeft <= 2;
+    nextBtn.disabled = slider.scrollLeft >= maxScroll - 2;
+  }
+
+  if (slider) {
+    if (prevBtn) prevBtn.addEventListener('click', function () { scrollSlider(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { scrollSlider(1); });
+    slider.addEventListener('scroll', updateSliderBtns, { passive: true });
+    window.addEventListener('resize', updateSliderBtns);
+    updateSliderBtns();
   }
 
   /* Phone input — auto-format XX XXX XX XX (9 digits) */
